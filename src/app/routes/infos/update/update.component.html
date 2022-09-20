@@ -58,9 +58,11 @@
               </mat-select> -->
               <mat-error *ngIf="_updateInfos.get('horaires')?.invalid">
                 {{ 'validations.required' | translate }}
+                <span></span>
               </mat-error>
             </mat-form-field>
           </div>
+
 
           <div fxFlex="50" fxFlex.lt-sm="100">
             <mat-form-field>
