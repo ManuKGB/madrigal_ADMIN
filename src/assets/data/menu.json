@@ -1,0 +1,35 @@
+{
+  "menu": [
+      {
+        "name":"dashboard",
+        "type":"sub",
+        "icon":"insert_chart",
+        "children":[
+          {
+            "route":"dashboard",
+            "name":"dashboard",
+            "type":"link"
+          }
+        ]
+      },
+
+      {
+        "route":"infos",
+        "name":"infos",
+        "type":"sub",
+        "icon":"assignment",
+        "children":[
+          {
+            "route":"update",
+            "name":"update",
+            "type":"link"
+          }
+        ]
+
+      }
+
+
+
+
+  ]
+}

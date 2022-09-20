@@ -1,0 +1,239 @@
+<page-header></page-header>
+
+<div fxLayout="row wrap" class="matero-row">
+  <div fxFlex="100" class="matero-col"></div>
+  <!-- <div fxFlex="0" fxFlex.lt-sm="100" class="matero-col">
+    <mat-card>
+      <mat-card-title>
+        Les champs avec <span class="text-danger">*</span> sont obligatoires
+      </mat-card-title>
+    </mat-card>
+  </div> -->
+
+  <div fxFlex="100" fxFlex.lt-sm="100" class="matero-col">
+    <mat-card>
+      <mat-card-title>Modifier informations</mat-card-title>
+
+      <form
+        [formGroup]="_updateInfos"
+        #updateInfosForm="ngForm"
+        (ngSubmit)="updateInfos(updateInfosForm.value)"
+        class="form-field-full"
+      >
+        <div fxLayout="row wrap" fxLayoutGap="8px grid">
+          <div fxFlex="50" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>Numéro </mat-label>
+              <input
+                (dblclick)="showImg()"
+                matInput
+                placeholder="Insérer les numéros "
+                formControlName="numero"
+                required
+                name="numero"
+                ngModel="{{ infos[0].numero }}"
+              />
+              <mat-error *ngIf="_updateInfos.get('numero')?.invalid">
+                {{ 'validations.required' | translate }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div fxFlex="50" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>Horaires</mat-label>
+              <input
+                matInput
+                placeholder="Insérer les horaires d'ouvertures du restaurant"
+                formControlName="horaires"
+                required
+                name="horaires"
+                ngModel="{{ infos[0].horaires }}"
+              />
+              <!-- <mat-select required formControlName="gender" required name="genre">
+                <mat-option>-- None --</mat-option>
+                <mat-option value="1">Homme</mat-option>
+                <mat-option value="2">Femme</mat-option>
+
+              </mat-select> -->
+              <mat-error *ngIf="_updateInfos.get('horaires')?.invalid">
+                {{ 'validations.required' | translate }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div fxFlex="50" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>intro_text </mat-label>
+              <input
+                matInput
+                placeholder="Intro Text"
+                formControlName="intro_text"
+                required
+                name="intro_text"
+                ngModel="{{ infos[0].introText }}"
+              />
+              <mat-error *ngIf="_updateInfos.get('intro_text')?.invalid">
+                {{ 'validations.required' | translate }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div fxFlex="50" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>Pourquoi nous</mat-label>
+              <input
+                matInput
+                placeholder="Pourquoi nous?"
+                formControlName="pourquoi"
+                required
+                name="pourquoi"
+                ngModel="{{ infos[0].pourquoiNous }}"
+              />
+              <mat-error *ngIf="_updateInfos.get('pourquoi')?.invalid">
+                {{ 'validations.required' | translate }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div fxFlex="50" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>Avis</mat-label>
+              <input
+                matInput
+                placeholder="Avis"
+                type="text"
+                formControlName="avis"
+                required
+                name="avis"
+                ngModel="{{ infos[0].avis }}"
+              />
+
+              <mat-error *ngIf="_updateInfos.get('avis')?.invalid">
+                {{ 'validations.required' | translate }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div fxFlex="50" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>Contact</mat-label>
+              <input
+                matInput
+                placeholder="Contact"
+                formControlName="contact"
+                name="contact"
+                ngModel="{{ infos[0].contact }}"
+              />
+              <mat-icon matSuffix>smartphone</mat-icon>
+              <mat-error *ngIf="_updateInfos.get('contact')?.invalid">
+                {{ 'validations.required' | translate }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div fxFlex="50" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>intro_text1</mat-label>
+              <input
+                matInput
+                placeholder="intro_text1"
+                formControlName="intro_text1"
+                name="intro_text1"
+                ngModel="{{ infos[0].introText1 }}"
+              />
+              <mat-error *ngIf="_updateInfos.get('intro_text1')?.invalid">
+                {{ 'validations.required' | translate }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxFlex="50" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>intro_text2</mat-label>
+              <input
+                matInput
+                placeholder="intro_text2"
+                formControlName="intro_text2"
+                name="intro_text12"
+                ngModel="{{ infos[0].introText2 }}"
+              />
+              <mat-error *ngIf="_updateInfos.get('intro_text2')?.invalid">
+                {{ 'validations.required' | translate }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxFlex="50" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>intro_text3</mat-label>
+              <input
+                matInput
+                placeholder="intro_text3"
+                formControlName="intro_text3"
+                name="intro_text3"
+                ngModel="{{ infos[0].introText3 }}"
+              />
+              <mat-error *ngIf="_updateInfos.get('intro_text3')?.invalid">
+                {{ 'validations.required' | translate }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxFlex="50" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>intro_text4</mat-label>
+              <input
+                matInput
+                placeholder="intro_text4"
+                formControlName="intro_text4"
+                name="intro_text4"
+                ngModel="{{ infos[0].introText4 }}"
+              />
+              <mat-error *ngIf="_updateInfos.get('intro_text4')?.invalid">
+                {{ 'validations.required' | translate }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxFlex="50" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>intro_text5</mat-label>
+              <input
+                matInput
+                placeholder="intro_text5"
+                formControlName="intro_text5"
+                name="intro_text5"
+                ngModel="{{ infos[0].introText5 }}"
+              />
+              <mat-error *ngIf="_updateInfos.get('intro_text5')?.invalid">
+                {{ 'validations.required' | translate }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxFlex="50" fxFlex.lt-sm="100">
+            <mat-form-field>
+              <mat-label>intro_text6</mat-label>
+              <input
+                matInput
+                placeholder="intro_text6"
+                formControlName="intro_text6"
+                name="intro_text6"
+                ngModel="{{ infos[0].introText6 }}"
+              />
+              <mat-error *ngIf="_updateInfos.get('intro_text6')?.invalid">
+                {{ 'validations.required' | translate }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <br />
+        <button
+          mat-raised-button
+          color="primary"
+          class="m-t-8"
+          type="submit"
+          [disabled]="_updateInfos.invalid"
+        >
+          Valider
+        </button>
+      </form>
+    </mat-card>
+  </div>
+</div>
