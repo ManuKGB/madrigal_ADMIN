@@ -5,9 +5,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class InfosService {
-  private infoGetUrl = 'http://localhost:8000/api/informations';
+  private infoGetUrl = 'https://testsymfapp.herokuapp.com/api/informations';
 
-  private infoUpdateUrl = 'http://localhost:8000/api/informations/update/1';
+  private infoUpdateUrl = 'https://testsymfapp.herokuapp.com/api/informations/update/1';
 
   constructor(private http: HttpClient) { }
 
