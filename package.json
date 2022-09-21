@@ -3,7 +3,7 @@
   "version": "0.0.0-NOT-USED",
   "scripts": {
     "ng": "ng",
-    "start": "node serve.js",
+    "start": "node server.js",
     "test": "ng test",
     "test:ci": "ng test --browsers=ChromeHeadless --watch=false --code-coverage",
     "e2e": "ng e2e",
