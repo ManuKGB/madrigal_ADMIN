@@ -1,10 +1,6 @@
 {
   "name": "ng-matero",
   "version": "0.0.0-NOT-USED",
-  "engines": {
-    "node": "v16.15.1",
-    "npm":"8.13.2"
-  },
   "scripts": {
     "ng": "ng",
     "start": "node serve.js",
@@ -26,7 +22,7 @@
     "publish": "npm run build:schematics && cd dist/schematics && npm publish",
     "prepare": "husky install",
     "analyze": "ng build --stats-json && webpack-bundle-analyzer dist/ng-matero/stats.json",
-    "postinstall": "ng build --aot --prod"
+    "heroku-postbuild":"ng build"
   },
   "private": true,
   "dependencies": {
